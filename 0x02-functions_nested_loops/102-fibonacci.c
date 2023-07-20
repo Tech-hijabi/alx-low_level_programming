@@ -7,7 +7,7 @@
  *
  * Return: 0 (success)
  */
-int main()
+int main(void)
 {
 	int i = 3, _1st = 1, _2nd = 1, next;
 
@@ -23,5 +23,5 @@ int main()
 	}
 	printf("\n");
 
-	return 0;
+	return (0);
 }
