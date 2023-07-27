@@ -8,17 +8,19 @@
  */
 void print_rev(char *s)
 {
-	int reverse = 0;
+	int r = 0;
 
-	while (s[reverse] != '\0')
+	while (s[r] != '\0')
 	{
-		reverse++;
+		r++;
 	}
 
-	while (reverse >= 0)
+	r--;
+
+	while (r >= 0)
 	{
-		_putchar(s[reverse]);
-		s--;
+		_putchar(s[r]);
+		r--;
 	}
 	_putchar('\n');
 }
