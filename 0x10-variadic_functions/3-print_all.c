@@ -33,7 +33,7 @@ void print_all(const char * const format, ...)
 				case 's':
 					strn = va_arg(all, char *);
 					if (!strn)
-						printf("(nil)");
+						strn = "(nil)";
 					printf("%s%s", sprt, strn);
 					break;
 				default:
