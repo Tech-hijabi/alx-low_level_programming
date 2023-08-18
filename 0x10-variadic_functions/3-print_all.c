@@ -11,8 +11,7 @@
 void print_all(const char * const format, ...)
 {
 	int i = 0;
-	float f;
-	char c, *s, *sprt = "";
+	char *strn, *sprt = "";
 	va_list all;
 
 	va_start(all, format);
@@ -23,22 +22,19 @@ void print_all(const char * const format, ...)
 			switch (format[i])
 			{
 				case 'c':
-					c = va_arg(all, int);
-					printf("%s%c", sprt, c);
+					printf("%s%c", sprt, va_arg(all, int));
 					break;
 				case 'i':
-					i = va_arg(all, int);
-					printf("%s%d", sprt, i);
+					printf("%s%d", sprt, va_arg(all, int));
 					break;
 				case 'f':
-					f = va_arg(all, double);
-					printf("%s%f", sprt, f);
+					printf("%s%f", sprt, va_arg(all, double));
 					break;
 				case 's':
-					s = va_arg(all, char *);
-					if (s == NULL)
+					strn = va_arg(all, char *);
+					if (!strn)
 						printf("(nil)");
-					printf("%s%s", sprt, s);
+					printf("%s%s", sprt, strn);
 					break;
 				default:
 					i++;
