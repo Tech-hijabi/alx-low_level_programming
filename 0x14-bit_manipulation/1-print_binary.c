@@ -8,16 +8,18 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int rep;
+	int rep = 0, i;
 
-	rep = 1UL << (sizeof(n) * CHAR_BIT - 1);
-
-	while (rep > 0)
+	for (i = sizeof(n) * 8 - 1; i >= 0; i--)
 	{
-		if (n & rep)
+		if ((n >> i) & 1)
+		{
 			printf("1");
-		else
+			rep = 1;
+		}
+		else if (rep)
 			printf("0");
-		rep >>= 1;
 	}
+	if (!rep)
+		printf("0");
 }
