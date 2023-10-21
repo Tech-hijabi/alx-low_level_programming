@@ -4,7 +4,6 @@
  * error_exit -  function exits with an error upon failure
  * @exit_code: code number of the exit
  * @message: the message printed when error is encountered
- * @filename: name of the file involved
  *
  * exit: exit_code
  */
